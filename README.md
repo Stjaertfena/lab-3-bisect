@@ -58,10 +58,41 @@ With two commits identified, one working and one broken, you are now ready to st
 
 1. Verify that you are now still on the desired commit, and that the bisecting process has been aborted; use `gitk` or `$ git status`
 
+- ❓ Who created the offending commit?
+- ❓ In which release was the bug introduced?
+
 Congratulations, you have now completed the first part of this assignment! 🎉
 
 ### Creating the fix
+With the offending commit identified let's create a fix for it.
+
+1. Start by verifying your current state:
+  ```
+  $ git status
+  HEAD detached at 52252f0
+  nothing to commit, working tree clean
+  ```
+  Your status output should look like above.
+
+1. Create a new branch from where you're at and switch to it, make sure to call it something meaningful.
+
+1. Now scrutinize the commit's patch in order to figure out what's causing the problem. With the bug identified, create a fix for it and commit it to your branch. Make sure to verify the hover state is now working as expected.
+
+Congratulations, you have now completed the second part of this assignment! 🎉
 
 ### Publishing the release
+With the bug both identified and fixed, it's time to decide how it should be integrated with the `main` branch and finally released.
+
+Depending on the workflow your project is using, there are three common options:
+- [Merge](https://git-scm.com/docs/git-merge) your branch straight into `main`
+- [Rebase](https://git-scm.com/docs/git-rebase) your branch onto `main` before merging it in
+- [Cherry-pick](https://git-scm.com/docs/git-cherry-pick) your changes into `main`
+
+1. Use which ever option you'd like to integrate your fix.
+1. Once done, tag your `main` branch with a suitable version (to "trigger" a new release)
+
+❓ How do the three options differ? Given your history, draw the three alternatives (using pen and paper) to showcase how they would play out in your particular case.
+
+Congratulations, you have now completed the final part of this assignment! 🎉
 
 [1]: https://repo "repo"
