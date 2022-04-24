@@ -1,4 +1,4 @@
-# Lab 3 - Hunting production bugs
+# Assignment 3 - Hunting production bugs
 ![sherlock](./docs/sherlock.jpeg)
 (Photo by [Ian Dooley](https://unsplash.com/@sadswim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pipe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText))
 
