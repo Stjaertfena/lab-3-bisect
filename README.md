@@ -20,7 +20,7 @@ In this exercise we'll be focusing on the latter of the two, and see how `bisect
 - For actions/operations performed on one computer – pair program!
 
 ## The assignment
-The `main` branch in [this][1] repository contains a bug that's also made it all the way into production. The product owner in your team wants to know for how long this issue have been present in the live environment, and obviously want a fix for it as soon as possible.
+The `main` branch in [this][1] repository contains a bug that's also made it all the way into production. The product owner in your team wants to know for how long this issue has been present in the live environment, and obviously want a fix for it deployed as soon as possible.
 
 Your task is to:
 - [ ] Identify when (i.e. from which commit) the bug was first introduced, and single out who created it
@@ -30,11 +30,14 @@ Your task is to:
 
 ### Identifying the culprit
 1. Fork and clone [this][1] repo and checkout the `main` branch
-1. Launch [src/index.html](./src/index.html) in your browser
-1. Verify the bug by hovering the main CTA button (notice how it disappears – it should not happen!)
+1. Launch `index.html` locally in your browser
+1. Verify the bug by hovering the main CTA button (notice how the label blends in to the button – it should not happen!)
+1. Configure Github pages to auto deploy from the `main` branch in your own fork (this will simulate a production environment). If you succeeded you should see the same page as you saw locally but under your own Github username, similar to this: https://stjaertfena.github.io/assignment-3-app/
+
+We are now ready to solve the mystery using **_bisect_** and eventually republish a fix to our production environment (e.g. your Github page)
 
 The product owner tells you that she is certain that the bug was not present in the `v1.0` release.
-1. Verify her statement by checking out the `v1.0` release locally. Is the hover state working as expected? (E.g. the CTA button does not disappear)
+1. Verify her statement by checking out the `v1.0` release locally. Is the hover state working as expected? (E.g. the button text does not blend into the button)
 
 With two commits identified, one working and one broken, you are now ready to start the bisecting process in order to figure out when the bug was introduced.
 1. Tell Git about your newfound information to kickstart the bisecting process.
@@ -72,9 +75,9 @@ With the offending commit identified let's create a fix for it.
   HEAD detached at 52252f0
   nothing to commit, working tree clean
   ```
-  Your status output should look like above.
+  Your status output should resemble above message.
 
-1. Create a new branch from where you're at and switch to it, make sure to call it something meaningful.
+1. Create a new branch from where you're at and switch to it, make sure to call it something meaningful (perhaps prefixing it with _hotfix/_ or _bugfix/_).
 
 1. Now scrutinize the commit's patch in order to figure out what's causing the problem. With the bug identified, create a fix for it and commit it to your branch. Make sure to verify the hover state is now working as expected.
 
@@ -89,10 +92,10 @@ Depending on the workflow your project is using, there are three common options:
 - [Cherry-pick](https://git-scm.com/docs/git-cherry-pick) your changes into `main`
 
 1. Use which ever option you'd like to integrate your fix.
-1. Once done, tag your `main` branch with a suitable version (to "trigger" a new release)
+1. Once done, tag your `main` branch with a suitable version and push both branch and the tag in order to trigger a new release; wait for the process to complete and verify that your Github page now contains the desired fix.
 
-❓ How do the three options differ? Given your history, draw the three alternatives (using pen and paper) to showcase how they would play out in your particular case.
+❓ How do the three integration options above differ? Given your history, draw the three alternatives (using pen and paper) to showcase how they would play out in your particular case.
 
 Congratulations, you have now completed the final part of this assignment! 🎉
 
-[1]: https://repo "repo"
+[1]: https://github.com/Stjaertfena/assignment-3-app "repo"
